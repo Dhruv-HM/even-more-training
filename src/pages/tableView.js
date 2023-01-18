@@ -1,11 +1,12 @@
 import React from 'react';
 import JsonData from "../data.json"
 import { Pagination } from '@mui/material';
+import TablePagination from '@mui/material/TablePagination';
 
 
-function DisplayTable(){
+function DisplayTable(props){
 
-    const DisplayData=JsonData.map(
+    const DisplayData=JsonData.slice(1,3).map(
     (product)=>{
         return(
             <tr>
@@ -35,7 +36,7 @@ function DisplayTable(){
                 </tbody>
             </table>
 
-            <Pagination count={10} />
+            <Pagination count={10}/>
 
              
         </div>

@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { dividerClasses } from '@mui/material';
-
+import {Grid} from '@material-ui/core/';
 
 
 
@@ -18,7 +18,7 @@ function DisplayCardGrid() {
         (product) => {
             return (
 
-                <div class="card" style={{ width: "18rem", margin:"2rem" }}>
+                <div class="card" style={{ width: "15rem", margin:"2rem" }}>
                     <img class="card-img-top" src={product.image} alt="Card image cap"  />
                     <div class="card-body">
                         <h5 class="card-title">{product.productName}</h5>
@@ -30,8 +30,14 @@ function DisplayCardGrid() {
         }
     )
     return (
-        <div className="d-flex">
+        <div className="">
+            <Grid                 container
+                spacing={2}
+                direction="row"
+                justify="flex-start"
+                alignItems="flex-start">
             {DisplayGrid}
+            </Grid>
         </div>
     )
 }
