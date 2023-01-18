@@ -1,15 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import DisplayTable from './pages/tableView';
 import DisplayCardGrid from './pages/cardGridView';
 import { Switch } from '@mui/material';
-import FormGroup from '@mui/material';
-import FormControlLabel from '@mui/material';
 import { useState } from 'react';
-import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
-import CustomPaginationActionsTable from './pages/tableView2';
-import TablePagination from './pages/tableView2';
 import TablePage from './pages/tableView2';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 function App() {
@@ -24,8 +18,9 @@ function App() {
   }
   return (
     <div className="container">
+      
+    <a href="dhruv.com"><GitHubIcon></GitHubIcon></a> <h1> Products </h1>
 
-      <h1> Products </h1>
 
 
       <div style={{textAlign:"right"}}> Table<Switch {..."some"} defaultChecked onChange={toggleView} />Grid</div>
