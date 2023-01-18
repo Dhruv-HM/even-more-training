@@ -1,0 +1,31 @@
+[
+
+    {
+        "id":1,
+        "productName":"Akshit",
+        "image":"https://www.flyrobo.in/image/cache/catalog/product/4a77078b-606a-425c-86ac-792a799ce1c1-550x550.jpeg",
+        "productDetails":"another product",
+        "price":"600"
+    },
+    {
+        "id":2,
+        "productName":"Akshit",
+        "image":"https://www.flyrobo.in/image/cache/catalog/product/4a77078b-606a-425c-86ac-792a799ce1c1-550x550.jpeg",
+        "productDetails":"another product",
+        "price":"500"
+    },   
+    {
+        "id":3,
+        "productName":"Akshit",
+        "image":"https://www.flyrobo.in/image/cache/catalog/product/4a77078b-606a-425c-86ac-792a799ce1c1-550x550.jpeg",
+        "productDetails":"another product",
+        "price":"200"
+    },    
+    {
+        "id":4,
+        "productName":"Akshit",
+        "image":"https://www.flyrobo.in/image/cache/catalog/product/4a77078b-606a-425c-86ac-792a799ce1c1-550x550.jpeg",
+        "productDetails":"another product",
+        "price":"100"
+    }
+]
