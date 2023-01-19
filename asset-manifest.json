@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/even-more-training/static/css/main.073c9b0a.css",
-    "main.js": "/even-more-training/static/js/main.01519ee2.js",
+    "main.css": "/even-more-training/static/css/main.efa768b0.css",
+    "main.js": "/even-more-training/static/js/main.6452951e.js",
     "static/js/787.cb64aee9.chunk.js": "/even-more-training/static/js/787.cb64aee9.chunk.js",
     "index.html": "/even-more-training/index.html",
-    "main.073c9b0a.css.map": "/even-more-training/static/css/main.073c9b0a.css.map",
-    "main.01519ee2.js.map": "/even-more-training/static/js/main.01519ee2.js.map",
+    "main.efa768b0.css.map": "/even-more-training/static/css/main.efa768b0.css.map",
+    "main.6452951e.js.map": "/even-more-training/static/js/main.6452951e.js.map",
     "787.cb64aee9.chunk.js.map": "/even-more-training/static/js/787.cb64aee9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.01519ee2.js"
+    "static/css/main.efa768b0.css",
+    "static/js/main.6452951e.js"
   ]
 }
