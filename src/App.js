@@ -1,9 +1,13 @@
 import './App.css';
-import DisplayCardGrid from './pages/cardGridView';
+// import DisplayCardGrid from './pages/cardGridView';
+import DisplayCardGrid from './pages/products/view/cardGridView';
 import { Switch } from '@mui/material';
 import { useState } from 'react';
-import TablePage from './pages/tableView2';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TablePage from './pages/products/view/tableView2';
+import DatatablePage from './pages/products/view/pagination';
+import StickyHeadTable from './pages/products/view/materialTable';
+
 
 
 function App() {
@@ -23,12 +27,16 @@ function App() {
 
 
 
-      <div style={{textAlign:"right"}}> Table<Switch {..."some"} defaultChecked onChange={toggleView} />Grid</div>
+      <div className="courier" style={{textAlign:"right"}}> Grid<Switch {..."some"} defaultChecked onChange={toggleView} />Table</div>
+      {/* <TableMaterial></TableMaterial> */}
 
-      {viewFlag && <TablePage/>}
-      {console.log(viewFlag)}
+    {/* { viewFlag && <DatatablePage></DatatablePage>}  */}
+     {viewFlag && <StickyHeadTable></StickyHeadTable>
+}
       
       {!viewFlag && <DisplayCardGrid></DisplayCardGrid>}
+
+      
     </div>
   );
 }

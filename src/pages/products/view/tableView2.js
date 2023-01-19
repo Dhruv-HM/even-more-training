@@ -7,10 +7,11 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import JsonData from "../data.json";
+import JsonData from "../../../data.json";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { MDBDataTable } from "mdbreact";
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -42,6 +43,7 @@ const TablePage = () => {
     const [product, setProduct] = useState([]);
     const [search, setSearch] = useState("");
     const[sliceIndex, setNext] = useState(1);
+    // const [data,setData] = useState([]);
 
     const getProductData = async () => {
         try {
@@ -60,46 +62,20 @@ const TablePage = () => {
 
     function previous(){
         setNext(sliceIndex-2);
-        console.log(sliceIndex)
+        console.log("clicked on previous")
+        console.log(sliceIndex);
     }
-
-    useEffect(() => {
-        getProductData();
-    }, []);
-    return (
-        <div className="">
-            <input
-                type="text"
-                placeholder="Search here"
-                onChange={(e) => {
-                    setSearch(e.target.value);
-                }}
-
-                style={{margin:"1%"}}
-            />
-            <button onclick={previous} style={{backgroundColor:"transparent",border:0}}><ArrowBackIosIcon/></button>
-
-            <button onClick={next} style={{backgroundColor:"transparent",border:0}}><ArrowForwardIosIcon/></button>
-            <TableContainer component={Paper}>
-                <Table className={classes.table} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Product</StyledTableCell>
-
-                            <StyledTableCell>Product Name</StyledTableCell>
-                            <StyledTableCell >Product Details</StyledTableCell>
-                            <StyledTableCell >Product Price</StyledTableCell>
-
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {JsonData
-                            .filter((item) => {
+    
+     function getData() {
+        let data= JsonData.filter((item) => {
                                 if (search == "") {
                                     return item;
                                 } else if (
                                     item.productName.toLowerCase().includes(search.toLowerCase())
-                                ) {
+                                )
+                                 
+                                {
+                                    console.log(item.productName,search);
                                     return item;
                                 }
                             })
@@ -122,10 +98,59 @@ const TablePage = () => {
                                         </StyledTableCell>
                                     </StyledTableRow>
                                 );
-                            }).slice(sliceIndex,sliceIndex+4)}
+                            });
+                        
+                        return data;
+    }
+
+    useEffect(() => {
+        
+    }, []);
+    return (
+        <div className="">
+            <input
+                type="text"
+                placeholder="Search here"
+                onChange={(e) => {
+                    setSearch(e.target.value);
+                }}
+
+                style={{margin:"1%"}}
+            />
+            {/* <button onclick={previous} style={{backgroundColor:"transparent",border:0}}><ArrowBackIosIcon/></button> */}
+
+            <button onClick={previous} style={{backgroundColor:"transparent",border:0}}><ArrowBackIosIcon/></button>
+            <button onClick={next} style={{backgroundColor:"transparent",border:0}}><ArrowForwardIosIcon/></button>
+
+            {/* <TableContainer component={Paper}>
+                <Table className={classes.table} aria-label="customized table">
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell>Product</StyledTableCell>
+
+                            <StyledTableCell>Product Name</StyledTableCell>
+                            <StyledTableCell >Product Details</StyledTableCell>
+                            <StyledTableCell >Product Price</StyledTableCell>
+
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {getData()}
+
+                        
+
                     </TableBody>
                 </Table>
-            </TableContainer>
+            </TableContainer> */}
+            <MDBDataTable
+            striped
+            bordered
+            small
+            data={getData()}>
+
+            </MDBDataTable>
+
+
         </div>
     );
 };

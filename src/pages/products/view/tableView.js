@@ -1,5 +1,5 @@
 import React from 'react';
-import JsonData from "../data.json"
+import JsonData from "../../../data.json";
 import { Pagination } from '@mui/material';
 import TablePagination from '@mui/material/TablePagination';
 
